@@ -1,0 +1,13 @@
+Reverse the string in shell ( echo "sathish" | rev )
+----------------------------------------------------------
+#!/bin/bash
+
+name="Sathish"
+length=${#name}      // get length of the string
+out=""
+for (( i=length-1; i>=0; i-- ))
+do
+out=${out}${name:$i:1}      // ${name:<position of char>:<number of cher to display>}
+done
+
+echo $out
