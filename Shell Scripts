@@ -11,3 +11,23 @@ out=${out}${name:$i:1}      // ${name:<position of char>:<number of cher to disp
 done
 
 echo $out
+
+Add numbers in the string
+---------------------------------------
+
+str="1daas3sd1i8"
+
+str_len=${#str}
+reg='^[0-9]+$'
+for ((i=0;i<=str_len;i++))
+do
+  str_val=${str:$i:1}
+
+  if [[ $str_val =~ $reg ]]; then
+    int_val=$((int_val+str_val))
+  fi
+
+done
+
+echo $int_val
+
